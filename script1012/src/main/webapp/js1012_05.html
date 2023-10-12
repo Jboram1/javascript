@@ -22,20 +22,25 @@
 	<body>
 		
 		<script>
-			var today = new Date(); //Date객체선언
+			var name; var kor; var eng;
+			var total; var avg;
 			function writeBtn(){
-				alert("테스트");
-				console.log(today); //현재시간
-				console.log(document.querySelector("#name").value); //입력된 글자
-				var name = document.querySelector("#name").value; //입력된 글자
-				var kor = document.querySelector("#kor").value;
-				var eng = document.querySelector("#eng").value;
-				document.querySelector("#t01").innerText=name;
-				document.querySelector("#t02").innerText=kor;
-				document.querySelector("#t03").innerText=eng;
-				document.querySelector("#t04").innerText=total;
-				document.querySelector("#t05").innerText=avg;
-				
+				//console.log(today); //현재시간
+				//console.log(document.querySelector("#name").value); //입력된 글자
+				name = document.querySelector("#name").value; //입력된 글자
+				kor = Number(document.querySelector("#kor").value);
+				eng = Number(document.querySelector("#eng").value);
+				total = kor+eng;
+				avg = total/2;
+				var htmlData = "";
+				htmlData += "<tr>";
+				htmlData += "<td>홍길동</td>";
+				htmlData += "<td>100</td>";
+				htmlData += "<td>100</td>";
+				htmlData += "<td>200</td>";
+				htmlData += "<td>100</td>";
+				htmlData += "</tr>";
+				document.querySelector("#content").innerHTML=htmlData;
 			}
 		</script>
 		
@@ -52,6 +57,7 @@
 		</section>
 		
 		<table>
+			
 			<colgroup>
 				<col style="width: 20%;">
 				<col style="width: 20%;">
@@ -59,20 +65,22 @@
 				<col style="width: 20%;">
 				<col style="width: 20%;">
 			</colgroup>
-			<tr>
-				<th>이름</th>
-				<th>국어</th>
-				<th>영어</th>
-				<th>합계</th>
-				<th>평균</th>
-			</tr>
-			<tr>
-				<td id="t01"></td>
-				<td id="t02"></td>
-				<td id="t03"></td>
-				<td id="t04"></td>
-				<td id="t05"></td>
-			</tr>
+			
+			<thead>
+				<tr>
+					<th>이름</th>
+					<th>국어</th>
+					<th>영어</th>
+					<th>합계</th>
+					<th>평균</th>
+				</tr>
+				
+			</thead>
+			
+			<tbody id="content">
+				
+				
+			</tbody>
 		</table>
 		 
 			
