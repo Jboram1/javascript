@@ -25,15 +25,13 @@
 					if(name==arr[i]){
 						arr.splice(i,1);
 						arr_print();
+						temp=1;
 						$("#name").val("");
 						$("#name").focus(); //커서 
 						return;
 					}
 				}
-				if(temp==0){ //없으면		document.write(arr,"<br>");
-			document.write(arr2,"<br>");
-			document.write(arr3,"<br>");
-			document.write(arr3.length,"<br>"); //길이
+			if(temp==0){ //없으면
 					alert("찾는 이름이 없습니다. 다시 입력하세요.");
 					$("#name").val("");
 					$("#name").focus();
